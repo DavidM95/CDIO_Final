@@ -1,9 +1,6 @@
 package data.dto;
 
-import data.dal.UserDAO;
-
 import java.io.Serializable;
-import java.util.List;
 
 public class UserDTO implements Serializable, IUserDTO {
 
