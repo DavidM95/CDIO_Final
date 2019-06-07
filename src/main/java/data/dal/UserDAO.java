@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO implements Serializable, data.dal.IUserDAO{
-    private final String url = "jdbc:mysql://ec2-52-30-211-3.eu-west-1.compute.amazonaws.com/s185131?";
-    private final String userName= "user=s185131";
-    private final String pass = "password=f641omiIhm3Ly1oQR5khj";
+    private final String url = "jdbc:mysql://ec2-52-30-211-3.eu-west-1.compute.amazonaws.com/s163595?";
+    private final String userName= "user=s163595";
+    private final String pass = "password=oDjrnV74VAGDSzevuH86K";
 
     @Override
     public void createUser(UserDTO user) throws DALException {
