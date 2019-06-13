@@ -2,7 +2,7 @@ body {
     background-color: #ECECEC;
     color: #444444;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     perspective: 1px;
     transform-style: preserve-3d;
     height: 100%;
@@ -164,6 +164,7 @@ footer {
     padding-top: 20px;
     display: block;
     background-color: #ee6e73;
+    margin: auto;
 }
 footer p {
     border-left: 3px solid #ffcdd2;
@@ -173,6 +174,33 @@ footer p {
 }
 div.Loggedin{
     float: Right;
+}
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+div.indhold{
+    margin-left: 50px;
 }
 
 
