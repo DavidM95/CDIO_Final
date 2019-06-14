@@ -13,6 +13,8 @@ public interface IUserDAO {
     //Read
     UserDTO getUser(int userId) throws DALException;
 
+
+
     List<UserDTO> getUserList() throws DALException;
 
     //Update

@@ -7,12 +7,20 @@ public class UserDTO implements Serializable, IUserDTO {
     private static final long serialVersionUID = 4545864587995944260L;
     private int	userId;
     private String userName;
+    private String ini;
+    private String password;
+    private String role; // i tvivl om samme bruger kan have flere roller??
+
+
 
 //    private List<String> roles;
 
-    public UserDTO(int userId, String userName) {
+    public UserDTO(int userId, String userName, String ini, String password, String role) {
         this.userId = userId;
         this.userName = userName;
+        this.ini = ini;
+        this.password = password;
+        this.role = role;
     }
 
     public UserDTO(int userId){
@@ -25,6 +33,27 @@ public class UserDTO implements Serializable, IUserDTO {
 
     public UserDTO() {
 
+    }
+
+
+    @Override
+    public String getIni() {
+        return ini;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+
+
+    public void setIni(String ini) {
+        this.ini = ini;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 
