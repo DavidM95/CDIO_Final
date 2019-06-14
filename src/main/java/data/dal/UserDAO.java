@@ -17,7 +17,7 @@ public class UserDAO implements Serializable, data.dal.IUserDAO{
     private final String pass = "password=ax1hqY3DBtPNqRcsvMGAy";
 
     @Override
-    public void createUser(UserDTO user) throws DALException {
+    public void createUser(UserDTO user) throws DALException, SQLException {
         try(Connection connection = DriverManager.getConnection(url + userName +"&"+ pass)){   // med det syntax behøver man ikke lave final og connection.close()
             // try with resources
             PreparedStatement pStmt = connection.prepareStatement("INSERT INTO users_db (username) VALUES(?,?,?,?)");
@@ -26,13 +26,20 @@ public class UserDAO implements Serializable, data.dal.IUserDAO{
             pStmt.setString(2,user.getUserName());
             pStmt.setString(3,user.getIni());
             pStmt.setString(4,user.getPassword());
-
             pStmt.executeUpdate();
 
+
+            PreparedStatement prep2 = connection.prepareStatement("INSERT INTO UserListRole(UserListId, Role) VALUES (?,?)");
+            for (String role : user.getRoles()){
+                prep2.setInt(1,user.getUserId());
+                prep2.setString(2,role);
+                prep2.executeUpdate();
+
+
+    }
         } catch (SQLException e){
             e.printStackTrace();
         }
-    }
 
 
     @Override
@@ -43,7 +50,7 @@ public class UserDAO implements Serializable, data.dal.IUserDAO{
         try(Connection connection = DriverManager.getConnection(url + userName + "&" + pass)){
 
             PreparedStatement pStmt = connection.prepareStatement(
-                    "SELECT * FROM users_db WHERE user_id = ?");
+                    "SELECT * FROM users_db WHERE userId = ?");
 
             pStmt.setInt(1, userId);
             ResultSet resultSet = pStmt.executeQuery();

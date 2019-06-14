@@ -10,6 +10,14 @@ public interface IUserDTO {
 
     String getUserName();
 
+    List<String>getRoles();
+
+    void addRole(String role);
+
+    boolean removeRole(String role);
+
+    void setRoles(List<String> roles);
+
     void setUserName(String userName);
 
     String toString();
