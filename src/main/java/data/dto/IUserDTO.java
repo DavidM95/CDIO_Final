@@ -20,6 +20,7 @@ public interface IUserDTO {
 
     void setUserName(String userName);
 
+    void setIni(String ini);
     String toString();
     String getIni();
 
@@ -28,14 +29,9 @@ public interface IUserDTO {
     // skal fjernes da det ikke bliver brugt i databasen
 
     // skal fjernes da det ikke blier brugt i databasen
-    //void setIni(String ini);
 
-    //List<String> getRoles();
 
-    //void setRoles(List<String> roles);
 
-    //void addRole(String role);
 
-    //boolean removeRole(String role);
 
 }

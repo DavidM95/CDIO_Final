@@ -18,32 +18,39 @@ public class UserDAO implements Serializable, data.dal.IUserDAO{
 
     @Override
     public void createUser(UserDTO user) throws DALException, SQLException {
-        try(Connection connection = DriverManager.getConnection(url + userName +"&"+ pass)){   // med det syntax behøver man ikke lave final og connection.close()
+        try (Connection connection = DriverManager.getConnection(url + userName + "&" + pass)) {   // med det syntax behøver man ikke lave final og connection.close()
             // try with resources
             PreparedStatement pStmt = connection.prepareStatement("INSERT INTO users_db (username) VALUES(?,?,?,?)");
 
-            pStmt.setInt(1 ,user.getUserId());
-            pStmt.setString(2,user.getUserName());
-            pStmt.setString(3,user.getIni());
-            pStmt.setString(4,user.getPassword());
+            pStmt.setInt(1, user.getUserId());
+            pStmt.setString(2, user.getUserName());
+            pStmt.setString(3, user.getIni());
+            pStmt.setString(4, user.getPassword());
             pStmt.executeUpdate();
 
 
             PreparedStatement prep2 = connection.prepareStatement("INSERT INTO UserListRole(UserListId, Role) VALUES (?,?)");
-            for (String role : user.getRoles()){
-                prep2.setInt(1,user.getUserId());
-                prep2.setString(2,role);
+            for (String role : user.getRoles()) {
+                prep2.setInt(1, user.getUserId());
+                prep2.setString(2, role);
                 prep2.executeUpdate();
 
 
-    }
-        } catch (SQLException e){
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
+    }
 
     @Override
     public UserDTO getUser(int userId) throws DALException {
+        return null;
+    }
+
+
+    @Override
+    public UserDTO getUser(int userId, String userName, String ini) throws DALException {
         UserDTO user = null;
 
         // closes itself if something fails
@@ -53,10 +60,12 @@ public class UserDAO implements Serializable, data.dal.IUserDAO{
                     "SELECT * FROM users_db WHERE userId = ?");
 
             pStmt.setInt(1, userId);
-            ResultSet resultSet = pStmt.executeQuery();
-            resultSet.next();
+            pStmt.setString(2, userName);
+            pStmt.setString(3, ini);
+            ResultSet res = pStmt.executeQuery();
+            res.next();
 
-            user = new UserDTO(userId,resultSet.getString(2));
+            user = new UserDTO(userId,res.getString(2),res.getString(3),res.getString(4), res.getString(5));
 
         } catch (SQLException e){
             e.printStackTrace();
@@ -65,7 +74,7 @@ public class UserDAO implements Serializable, data.dal.IUserDAO{
     }
 
     @Override
-    public List<UserDTO> getUserList() throws DALException {
+    public List<UserDTO> getUserList() throws data.dto.DALException {
         List<UserDTO> users = new ArrayList<>();
         UserDTO user = null;
 
