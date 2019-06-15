@@ -5,7 +5,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
 <!--    <script src="JS.Main.js"></script>-->
-    <script src="sovs.js"></script>
+    <script src="Login.js"></script>
     <script src="jquery-3.1.1.js"></script>
     <script src="jquery.serialize-object.js"></script>
 
@@ -14,33 +14,26 @@
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 <div id="id01" class="modal">
 
-    <form class="modal-content-animate">
+    <div class="modal-content animate">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         </div>
+        <form id="loginform">
+            <label for="userName">BrugerNavn: </label>
+            <input type="text" id="userName" name="userName">
 
+            <label for="userPassword">Password: </label>
+            <input type="text" id="userPassword" name="userPassword">
+            <button onclick="userLogin2();">Gem ændringer</button>
 
-        <div class="container" style="background-color:#f1f1f1">
+            <div class="container" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">
                 Cancel
             </button>
-
         </div>
-    </form>
+        </form>
+    </div>
 </div>
-<DIV class="container">
-    <form id="ingredientform">
-        <div>
-            <label for="userName">ID: </label> <input type="text"
-                                                id="userName" name="userName">
-        </div>
-        <div>
-            <label for="userId">Navn: </label><input type="number"
-                                                   id="userId" name="userId">
-        </div>
-        <button onclick="userLogin2();">Gem ændringer</button>
-    </form>
-</DIV>
 </body>
 </html>
 

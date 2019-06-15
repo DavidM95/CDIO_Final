@@ -37,26 +37,3 @@ function myFunction() {
         x.style.display = "none";
     }
 }
-
-function userLogin() {
-    event.preventDefault();
-    alert("jeg er her inde 1");
-    alert("JEG KAN DANSE");
-    var data = $('#ingredientform').serializeJSON();
-    alert("jeg er her inde 2");
-    $.ajax({
-        url: 'rest/helloService',
-        method: 'POST',
-        contentType: "application/json", // det visender er json
-        data: data,
-        success: function (data) {
-            alert(JSON.stringify(data));
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            alert(jqXHR.responseText);
-            alert(textStatus);
-            alert(errorThrown);
-
-        }
-    });
-}

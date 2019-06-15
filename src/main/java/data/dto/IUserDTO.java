@@ -12,20 +12,26 @@ public interface IUserDTO {
 
     void setUserName(String userName);
 
+    String getUserIni();
+
+    void setUserIni(String ini);
+
+    String getUserPassword();
+
+    void setUserPassword(String userPassword);
+
+    String getUserRole();
+
+    void setUserRole(String userRole);
+
     String toString();
 
-    // skal fjernes da det ikke bliver brugt i databasen
-    //String getIni();
+    List<String> getRoles();
 
-    // skal fjernes da det ikke blier brugt i databasen
-    //void setIni(String ini);
+    void setRoles(List<String> roles);
 
-    //List<String> getRoles();
+    void addRole(String role);
 
-    //void setRoles(List<String> roles);
-
-    //void addRole(String role);
-
-    //boolean removeRole(String role);
+    boolean removeRole(String role);
 
 }

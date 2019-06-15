@@ -7,9 +7,9 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("helloService")
+@Path("createUser")
 
-public class HelloService {
+public class CreateUser {
 
     @GET
     public Response getHelloWorld() {
@@ -31,8 +31,8 @@ public class HelloService {
 //
 //        if(loggedin) {
 
-            System.out.println("Username: " + userDTO.getUserName() + " userPassword: " + userDTO.getUserPassword());
-            return Response.ok("OK" + userDTO.getUserName()).build();
+        System.out.println("UserId: " + userDTO.getUserId() + "Username: " + userDTO.getUserName() + "UserIni: " + userDTO.getUserIni() + " userPassword: " + userDTO.getUserPassword() + "userRole: " + userDTO.getUserRole() );
+        return Response.ok("OK" + userDTO.getUserName()).build();
 
 //         } else {
 //            return Response.ok("-1").build();
