@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bruger Administration</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>
+    <link rel="stylesheet" href="../Css.Main.css">
+    <script src="../JS.Main.js"></script>
+    <script src="BrugerAdministration.js"></script>
+</head>
+<body>
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+<div class="navbar">
+    <ul class="navbar-container">
+        <li class="nav-item"><a href="../index.html" class="left-underline nav-button" data-scroll>Home</a></li>
+        <li class="nav-item"><a href="../Login.html" class="left-underline nav-button" data-scroll>Login</a></li>
+        <li class="nav-item active"><a href="../BrugerAdministration.html" class="left-underline nav-button" data-scroll>Bruger Administration</a></li>
+        <div class="Loggedin">
+            logget ind som "Admin"
+        </div>
+
+    </ul>
+</div>
+
+<h1>Button Group</h1>
+
+<div class="btn-group">
+    <a href='../OpretBruger.html'><button>Opret Bruger</button></a>
+    <a href='../RetBruger.html'><button>Ret Bruger</button></a>
+    <a href='../SeBruger.html'><button>Se Bruger</button></a>
+    <a href='../SletBruger.html'><button>Slet Bruger</button></a>
+</div>
+<div class="indhold">
+    <h2>Se Bruger</h2>
+    <form>
+        Indtast ID:<br>
+        <input type="number" name="ID">
+    </form>
+    <button  onclick="myFunction()">Vis data </button>
+
+    <div id="myDIV">
+        Bruger Data:<br>
+
+        ID:<br>
+        Brugernavn:<br>
+        Password:<br>
+        Initialer:<br>
+        Roller:<br>
+    </div>
+
+
+</div>
+<footer>
+</footer>
+</body>
+</html>
