@@ -1,6 +1,7 @@
 package data.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class UserDTO implements Serializable, IUserDTO {
 
@@ -72,6 +73,26 @@ public class UserDTO implements Serializable, IUserDTO {
         return userName;
     }
 
+
+    public static List<String> getRoles() {
+        return null;
+    }
+
+    @Override
+    public void addRole(String role) {
+
+    }
+
+    @Override
+    public boolean removeRole(String role) {
+        return false;
+    }
+
+    @Override
+    public void setRoles(List<String> roles) {
+
+    }
+
     @Override
     public void setUserName(String userName) {
         this.userName = userName;
@@ -79,7 +100,7 @@ public class UserDTO implements Serializable, IUserDTO {
 
     @Override
     public String toString() {
-        return "UserDTO [userId=" + userId + ", userName=" + userName + "initials=" + ini"]";
+        return "UserDTO [userId=" + userId + ", userName=" + userName + "initials=" + ini + "roles=" + UserDTO.getRoles() + "]";
     }
 
 }

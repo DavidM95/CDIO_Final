@@ -10,8 +10,9 @@ public interface IUserDTO {
 
     String getUserName();
 
-    List<String>getRoles();
-
+    static List<String>getRoles(){
+        return getRoles();
+    }
     void addRole(String role);
 
     boolean removeRole(String role);

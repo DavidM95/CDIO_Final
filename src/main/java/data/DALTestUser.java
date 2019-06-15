@@ -4,17 +4,12 @@ import data.dal.IUserDAO;
 import data.dto.UserDTO;
 import data.dto.IUserDTO;
 import data.dal.UserDAO;
-
-import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Test;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 public class DALTestUser {
 
@@ -35,7 +30,7 @@ public class DALTestUser {
         assertEquals(expected, actual);
         assertEquals("LK",testUser.getIni());
 
-
+        System.out.println(testUser);
     }
 
 
