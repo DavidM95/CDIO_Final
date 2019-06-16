@@ -1,8 +1,8 @@
 package rest;
 
 
-import data.Controllere.Controller;
 import data.dto.UserDTO;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -26,14 +26,13 @@ public class CreateUser {
 
 
     @POST
-    public Response opretBruger(UserDTO userDTO) {
+    public Response loginUser(UserDTO userDTO) {
 //        boolean loggedin = logincontroller.login(userDTO);
 //
 //        if(loggedin) {
 
-        Controller.opretBruger(userDTO);
         System.out.println("UserId: " + userDTO.getUserId() + "Username: " + userDTO.getUserName() + "UserIni: " + userDTO.getUserIni() + " userPassword: " + userDTO.getUserPassword() + "userRole: " + userDTO.getUserRole() );
-        return Response.ok("Du har nu oprettet en bruger").build();
+        return Response.ok("OK" + userDTO.getUserName()).build();
 
 //         } else {
 //            return Response.ok("-1").build();
