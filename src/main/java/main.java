@@ -24,9 +24,9 @@ public class main {
         System.out.println("Enter name:");
         newUser.setUserName(sc.nextLine());
         System.out.println("Enter initials:");
-        newUser.setIni(sc.nextLine());
+        newUser.setUserIni(sc.nextLine());
         System.out.println("Enter wanted password");
-        newUser.setPassword(sc.nextLine());
+        newUser.setUserPassword(sc.nextLine());
         System.out.println("Enter how many roles to add to user");
         int rolescount = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < rolescount; i++) {
@@ -62,7 +62,7 @@ public class main {
         userInput = sc.nextLine();
         if (userInput.equals("y")) {
             List<String> userRoles = new ArrayList<String>();
-            for(String s : IUserDTO.getRoles()) {
+            for(String s : UserDTO.getRoles()) {
                 userRoles.add(s);
             }
             for (int i = 0; i < userRoles.size(); i++) {
@@ -123,7 +123,7 @@ public class main {
 //        UserDTO newUser = new UserDTO();
 //        newUser.setUserId(1);
 //        newUser.setUserName("David Milutin");
-//        newUser.setIni("DM");
+//        newUser.setUserIni("DM");
 //        newUser.addRole("Admin");
 //        newUser.addRole("Supervisor");
 //
@@ -133,7 +133,7 @@ public class main {
 //        System.out.println(newUserFromDatabase);
 //
 //        newUserFromDatabase.setUserName("Hans Christian");
-//        newUserFromDatabase.setIni("HC");
+//        newUserFromDatabase.setUserIni("HC");
 //        newUserFromDatabase.removeRole("Admin");
 //
 //        c.updateUser(newUserFromDatabase);

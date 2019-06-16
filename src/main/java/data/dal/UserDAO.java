@@ -21,15 +21,15 @@ public class UserDAO implements Serializable, data.dal.IUserDAO {
 
             pStmt.setInt(1, user.getUserId());
             pStmt.setString(2, user.getUserName());
-            pStmt.setString(3, user.getIni());
-            pStmt.setString(4, user.getPassword());
+            pStmt.setString(3, user.getUserIni());
+            pStmt.setString(4, user.getUserPassword());
             pStmt.executeUpdate();
 
             PreparedStatement prep2 = connection.prepareStatement("INSERT INTO UserRoles(UserId, RoleId, ini) VALUES (?,?,?)");
             for (String role : user.getRoles()) {
                 prep2.setInt(1, user.getUserId());
                 prep2.setString(2, role);
-                prep2.setString(3,user.getIni());
+                prep2.setString(3,user.getUserIni());
                 prep2.executeUpdate();
 
 

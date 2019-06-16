@@ -9,30 +9,29 @@ public interface IUserDTO {
     void setUserId(int userId);
 
     String getUserName();
+    void setUserName(String userName);
 
-    static List<String>getRoles(){
-        return getRoles();
-    }
-    void addRole(String role);
+    String getUserIni();
 
-    boolean removeRole(String role);
+
+    void setUserIni(String UserIni);
+
+    String getUserPassword();
+
+    void setUserPassword(String userPassword);
+
+    String getUserRole();
+
+    void setUserRole(String userRole);
+
+    String toString();
+
+    List<String> getRoles();//{ return getRoles(); }
 
     void setRoles(List<String> roles);
 
-    void setUserName(String userName);
+    void addRole(String role);
 
-    void setIni(String ini);
-    String toString();
-    String getIni();
-
-    String getPassword();
-
-    // skal fjernes da det ikke bliver brugt i databasen
-
-    // skal fjernes da det ikke blier brugt i databasen
-
-
-
-
+    boolean removeRole(String role);
 
 }
