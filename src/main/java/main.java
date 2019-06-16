@@ -21,7 +21,6 @@ public class main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter user id:");
         newUser.setUserId(sc.nextInt());
-    //    newUser.setUserId(Integer.parseInt(sc.nextLine()));
         System.out.println("Enter name:");
         newUser.setUserName(sc.nextLine());
         System.out.println("Enter initials:");

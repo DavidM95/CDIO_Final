@@ -60,7 +60,7 @@ public class UserDAO implements Serializable, data.dal.IUserDAO {
     }
 
 
-//    private UserDTO getUser(int userId, String userName, String ini, String role) throws DALException {
+//    public UserDTO getUser(int userId, String userName, String ini, String role) throws DALException {
 //        UserDTO user = null;
 //
 //        // closes itself if something fails
@@ -72,6 +72,7 @@ public class UserDAO implements Serializable, data.dal.IUserDAO {
 //            pStmt.setInt(1, userId);
 //            pStmt.setString(2, userName);
 //            pStmt.setString(3, ini);
+//            pStmt.setString(4, password);
 //            ResultSet res = pStmt.executeQuery();
 //            res.next();
 //
