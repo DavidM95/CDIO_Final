@@ -31,11 +31,24 @@
     <a href='../SletBruger.html'><button>Slet Bruger</button></a>
 </div>
 <div class="indhold">
-    <h2>Ret Bruger</h2>
+    <h2>Indtast ID</h2>
 
-    <form action="/action_page.php">
+    <form>
         ID:<br>
-        <input type="text" name="ID" value="1">
+        <input type="text" name="ID">
+        <br>
+
+        <input onclick="myFunction();loadIngredients();" value="Find ID">
+    </form>
+<div id = retbruger>
+
+    <tbody id="ingredienttablebody">
+
+    </tbody>
+    <form id="retbrugerform" style="display: none">
+        <h2>Ret Bruger</h2>
+        ID:<br>
+        <input type="text" name="ID" value="">
         <br>
         Brugernavn:<br>
         <input type="text" name="Brugernavn" value="John">
@@ -49,9 +62,9 @@
         Rolle:<br>
         <input type="text" name="Rolle" value="Laborant">
         <br><br>
-        <input type="submit" value="Ret Bruger">
+        <input onclick="retBruger();" value="Ret">
     </form>
-
+</div>
     <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
 </div>
 <footer>

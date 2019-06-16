@@ -1,5 +1,5 @@
 
-function userLogin2() {
+function userLogin() {
     alert("jeg er her");
     event.preventDefault();
     var data = $('#loginform').serializeJSON();
@@ -22,7 +22,7 @@ function userLogin2() {
     });
 }
 
-function opretBruger2() {
+function opretBruger() {
     alert("jeg er her");
     event.preventDefault();
     var data = $('#opretbruger').serializeJSON();
@@ -30,6 +30,38 @@ function opretBruger2() {
     $.ajax({
         url: 'rest/createUser',
         method: 'POST',
+
+        contentType: "application/json", // det visender er json
+        data: data,
+        success: function (data) {
+            alert(JSON.stringify(data));
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert(jqXHR.responseText);
+            alert(textStatus);
+            alert(errorThrown);
+
+        }
+    });
+}
+function loadIngredients() {
+    $.get('rest/createUser', function (data, textStatus, req) {
+        $("#ingredienttablebody").empty();
+        $.each(data, function (i, elt) {
+            $('#ingredienttablebody').append(generateIngredientHTML(elt));
+        });
+    });
+}
+
+
+function retBruger() {
+    alert("jeg er her");
+    event.preventDefault();
+    var data = $('#retbrugerform').serializeJSON();
+    alert(data);
+    $.ajax({
+        url: 'rest/createUser',
+        method: 'GET',
 
         contentType: "application/json", // det visender er json
         data: data,

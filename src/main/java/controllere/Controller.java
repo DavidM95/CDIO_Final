@@ -12,7 +12,7 @@ public class Controller {
 //            userDAO.createUser(userDTO);
 //    }
 
-    public void opretBruger(UserDTO userDTO,UserDAO userDAO) throws IUserDAO.DALException {
-        if (userDTO.getUserId() != userDAO.getUser(userDTO.getUserId()));
-    }
+//    public void opretBruger(UserDTO userDTO,UserDAO userDAO) throws IUserDAO.DALException {
+//        if (userDTO.getUserId() != userDAO.getUser(userDTO.getUserId()));
+//    }
 }
