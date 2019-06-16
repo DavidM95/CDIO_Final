@@ -36,8 +36,10 @@ public class UserDAO implements Serializable, data.dal.IUserDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
+
+
+
 
     @Override
     public UserDTO getUser(int userId) throws DALException {
