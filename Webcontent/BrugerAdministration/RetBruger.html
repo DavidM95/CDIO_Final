@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Bruger Administration</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>-->
     <link rel="stylesheet" href="../Css.Main.css">
+    <script src="../jquery-3.1.1.js"></script>
+    <script src="../jquery.serialize-object.js"></script>
     <script src="../JS.Main.js"></script>
+    <script src="../Login/Login.js"></script>
+
 </head>
 <body>
 
@@ -38,14 +42,14 @@
         <input type="text" name="ID">
         <br>
 
-        <input onclick="myFunction();loadIngredients();" value="Find ID">
+        <button onclick="sebruger()"> Se Bruger</button>
+        <tbody id="ingredienttablebody">
+
+        </tbody>
     </form>
 <div id = retbruger>
-
-    <tbody id="ingredienttablebody">
-
-    </tbody>
-    <form id="retbrugerform" style="display: none">
+    <button onclick=""> Ret Bruger</button>
+    <form id="retbrugerform">
         <h2>Ret Bruger</h2>
         ID:<br>
         <input type="text" name="ID" value="">
@@ -62,7 +66,7 @@
         Rolle:<br>
         <input type="text" name="Rolle" value="Laborant">
         <br><br>
-        <input onclick="retBruger();" value="Ret">
+        <button onclick="retBruger();"> Ret Bruger</button>
     </form>
 </div>
     <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>

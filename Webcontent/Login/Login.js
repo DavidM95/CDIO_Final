@@ -44,35 +44,14 @@ function opretBruger() {
         }
     });
 }
-function loadIngredients() {
-    $.get('rest/createUser', function (data, textStatus, req) {
-        $("#ingredienttablebody").empty();
-        $.each(data, function (i, elt) {
-            $('#ingredienttablebody').append(generateIngredientHTML(elt));
-        });
-    });
-}
+
+function sebruger() {
+    $.get("rest/createUser", function (data, status) {
+        $("#ingredienttablebody").html(data);
+            alert(status);
+        })
+    }
 
 
-function retBruger() {
-    alert("jeg er her");
-    event.preventDefault();
-    var data = $('#retbrugerform').serializeJSON();
-    alert(data);
-    $.ajax({
-        url: 'rest/createUser',
-        method: 'GET',
 
-        contentType: "application/json", // det visender er json
-        data: data,
-        success: function (data) {
-            alert(JSON.stringify(data));
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            alert(jqXHR.responseText);
-            alert(textStatus);
-            alert(errorThrown);
 
-        }
-    });
-}
