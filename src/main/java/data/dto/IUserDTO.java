@@ -14,7 +14,7 @@ public interface IUserDTO {
 
     String getUserIni();
 
-    void setUserIni(String ini);
+    void setUserIni(String userIni);
 
     String getUserPassword();
 

@@ -10,17 +10,27 @@ public class UserDTO implements Serializable, IUserDTO {
     private String userName;
     private String userIni;
     private String userPassword;
-    private String userRole;
+    private String userRole; // i tvivl om samme bruger kan have flere roller??
+
+
+
 //    private List<String> roles;
 
-    public UserDTO(int userId, String userName,String userIni, String userPassword,String userRole) {
+    public UserDTO(int userId, String userName, String userIni, String userPassword, String userRole) {
         this.userId = userId;
         this.userName = userName;
         this.userIni = userIni;
         this.userPassword = userPassword;
         this.userRole = userRole;
-
     }
+
+  //  public UserDTO(int userId){
+  //      this.userId = userId;
+  //  }
+
+  //  public UserDTO(String userName){
+  //      this.userName = userName;
+  //  }
 
 //    public UserDTO(String userPassword){
 //        this.userPassword = userPassword;
@@ -33,9 +43,9 @@ public class UserDTO implements Serializable, IUserDTO {
     public UserDTO() {
 
     }
-
     @Override
-    public int getUserId() { return userId; }
+    public int getUserId() {
+        return userId;}
 
     @Override
     public void setUserId(int userId) {this.userId = userId; }
@@ -93,6 +103,7 @@ public class UserDTO implements Serializable, IUserDTO {
     }
     @Override
     public String toString() {
-        return "UserDTO [userName=" + userName + ", userPassword=" + userPassword + "]";
+        return "UserDTO [userId=" + userId + ", userName=" + userName + "initials=" + userIni + "role=" + userRole + "]";
     }
+
 }
