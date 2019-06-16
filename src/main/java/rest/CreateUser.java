@@ -1,7 +1,6 @@
 package rest;
 
-
-import data.Controllere.Controller;
+import controllere.Controller;
 import data.dto.UserDTO;
 
 import javax.ws.rs.*;
@@ -27,18 +26,10 @@ public class CreateUser {
 
 
     @POST
-    public Response loginUser(UserDTO userDTO) {
-//        boolean loggedin = logincontroller.login(userDTO);
-//
-//        if(loggedin) {
-        Controller controller = new Controller();
-        controller.opretBruger();
-        System.out.println("UserId: " + userDTO.getUserId() + "Username: " + userDTO.getUserName() + "UserIni: " + userDTO.getUserIni() + " userPassword: " + userDTO.getUserPassword() + "userRole: " + userDTO.getUserRole() );
-        return Response.ok("OK" + userDTO.getUserName()).build();
-
-//         } else {
-//            return Response.ok("-1").build();
-//        }
+    public Response CreatUser(UserDTO userDTO) {
+      Controller controller = new Controller();
+       controller.opretBruger(userDTO);
+        return Response.ok("OK").build();
 
     }
 }
