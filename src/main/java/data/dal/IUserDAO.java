@@ -1,5 +1,6 @@
 package data.dal;
 
+import data.dto.DALException;
 import data.dto.IUserDTO;
 import data.dto.UserDTO;
 
@@ -12,8 +13,7 @@ public interface IUserDAO {
     void createUser(UserDTO user) throws DALException, SQLException;
 
     //Read
-    UserDTO getUser(int userId) throws DALException;
-
+    UserDTO getUser(int userId) throws DALException, SQLException;
 
     List<UserDTO> getUserList() throws DALException;
 
@@ -22,20 +22,6 @@ public interface IUserDAO {
 
     //Delete
     void deleteUser(int userId) throws DALException;
-
-    public class DALException extends Exception {
-        //Til Java serialisering...
-        private static final long serialVersionUID = 7355418246336739229L;
-
-        public DALException(String msg, Throwable e) {
-            super(msg,e);
-        }
-
-        public DALException(String msg) {
-            super(msg);
-        }
-
-    }
 
 
 }

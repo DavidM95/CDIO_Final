@@ -1,12 +1,17 @@
 package rest;
 
 
-import data.Controllere.Controller;
+import
+import controllere.Controller;
+import data.dal.IUserDAO;
+import data.dal.UserDAO;
 import data.dto.UserDTO;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.sql.SQLException;
+
 @Consumes(MediaType.APPLICATION_JSON)
 @Path("createUser")
 
@@ -27,18 +32,18 @@ public class CreateUser {
 
 
     @POST
-    public Response loginUser(UserDTO userDTO) {
+    public Response loginUser(UserDTO userDTO, UserDAO userDAO) throws SQLException, IUserDAO.DALException {
 //        boolean loggedin = logincontroller.login(userDTO);
 //
-//        if(loggedin) {
+        if(loggedin) {
         Controller controller = new Controller();
-        controller.opretBruger();
+        controller.createUser(userDTO,userDAO);
         System.out.println("UserId: " + userDTO.getUserId() + "Username: " + userDTO.getUserName() + "UserIni: " + userDTO.getUserIni() + " userPassword: " + userDTO.getUserPassword() + "userRole: " + userDTO.getUserRole() );
         return Response.ok("OK" + userDTO.getUserName()).build();
 
-//         } else {
-//            return Response.ok("-1").build();
-//        }
+         } else {
+            return Response.ok("-1").build();
+        }
 
     }
 }

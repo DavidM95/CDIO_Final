@@ -6,6 +6,10 @@ import java.util.List;
 public class UserDTO implements Serializable, IUserDTO {
 
     private static final long serialVersionUID = 4545864587995944260L;
+
+
+
+    public int roleId;
     private int userId;
     private String userName;
     private String userIni;
@@ -104,6 +108,14 @@ public class UserDTO implements Serializable, IUserDTO {
     @Override
     public String toString() {
         return "UserDTO [userId=" + userId + ", userName=" + userName + "initials=" + userIni + "role=" + userRole + "]";
+    }
+
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
 }
