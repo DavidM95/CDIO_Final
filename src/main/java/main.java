@@ -20,7 +20,8 @@ public class main {
         UserDTO newUser = new UserDTO();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter user id:");
-        newUser.setUserId(Integer.parseInt(sc.nextLine()));
+        newUser.setUserId(sc.nextInt());
+    //    newUser.setUserId(Integer.parseInt(sc.nextLine()));
         System.out.println("Enter name:");
         newUser.setUserName(sc.nextLine());
         System.out.println("Enter initials:");
@@ -62,7 +63,7 @@ public class main {
         userInput = sc.nextLine();
         if (userInput.equals("y")) {
             List<String> userRoles = new ArrayList<String>();
-            for(String s : UserDTO.getRoles()) {
+            for(String s : user.getRoles()) {
                 userRoles.add(s);
             }
             for (int i = 0; i < userRoles.size(); i++) {
@@ -96,7 +97,6 @@ public class main {
     }
 
     public static void main(String[] args) throws Exception {
-
         UserDAO u = new UserDAO();
         System.out.println(getMenuText());
         Scanner sc = new Scanner(System.in);

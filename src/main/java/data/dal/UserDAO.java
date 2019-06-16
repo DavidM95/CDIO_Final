@@ -17,24 +17,22 @@ public class UserDAO implements Serializable, data.dal.IUserDAO {
     public void createUser(UserDTO user) throws DALException, SQLException {
         try (Connection connection = DriverManager.getConnection(url + userName + "&" + pass)) {   // med det syntax behøver man ikke lave final og connection.close()
             // try with resources
-            PreparedStatement pStmt = connection.prepareStatement("INSERT INTO users_db (userId, userName, ini, password) VALUES(?,?,?,?)");
+            PreparedStatement pStmt = connection.prepareStatement("INSERT INTO users_db (userId, userName, ini, password, userRole ) VALUES(?,?,?,?,?)");
 
             pStmt.setInt(1, user.getUserId());
             pStmt.setString(2, user.getUserName());
             pStmt.setString(3, user.getUserIni());
             pStmt.setString(4, user.getUserPassword());
+            pStmt.setString(5, user.getUserRole());
             pStmt.executeUpdate();
 
-            PreparedStatement prep2 = connection.prepareStatement("INSERT INTO UserRoles(UserId, RoleId, ini) VALUES (?,?,?)");
-            for (String role : user.getRoles()) {
-                prep2.setInt(1, user.getUserId());
-                prep2.setString(2, role);
-                prep2.setString(3,user.getUserIni());
-                prep2.executeUpdate();
-
-
-
-            }
+//            PreparedStatement prep2 = connection.prepareStatement("INSERT INTO UserRoles(UserId, RoleId, ini) VALUES (?,?,?)");
+//            for (String role: user.getRoles()) {
+//                prep2.setInt(1, user.getUserId());
+//                prep2.setString(2, role);
+//                prep2.setString(3,user.getUserIni());
+//                prep2.executeUpdate();
+//            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

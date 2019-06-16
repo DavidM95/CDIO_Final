@@ -87,8 +87,9 @@ public class UserDTO implements Serializable, IUserDTO {
     @Override
     public void setRoles(List<String> roles) {
     }
+
     @Override
-    public static List<String> getRoles() {
+    public List<String> getRoles() {
         return null;
     }
 
@@ -106,4 +107,5 @@ public class UserDTO implements Serializable, IUserDTO {
     public String toString() {
         return "UserDTO [userId=" + userId + ", userName=" + userName + "initials=" + userIni + "role=" + userRole + "]";
     }
+
 }
